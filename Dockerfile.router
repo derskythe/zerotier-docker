@@ -1,4 +1,4 @@
-ARG FROM_IMAGE=zyclonite/zerotier
+ARG FROM_IMAGE=derskythe/zerotier-test
 ARG FROM_VERSION=latest
 
 FROM ${FROM_IMAGE}:${FROM_VERSION}
@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.title="zerotier" \
       org.opencontainers.image.version="router-${ZT_VERSION}" \
       org.opencontainers.image.description="ZeroTier One router as Docker Image" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.source="https://github.com/zyclonite/zerotier-docker"
+      org.opencontainers.image.source="https://github.com/derskythe/zerotier-docker"
 
 ENV LOG_PATH=/var/log/supervisor
 

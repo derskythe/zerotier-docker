@@ -1,7 +1,7 @@
 version: '3'
 services:
   zerotier:
-    image: zyclonite/zerotier
+    image: derskythe/zerotier-test
     container_name: zerotier-one
     devices:
       - /dev/net/tun
