@@ -75,7 +75,7 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: Setup podman and buildah
-        uses: ${{ env.HUB_NAME }}/setup-podman@v1
+        uses: zyclonite/setup-podman@v1
 
       - name: Import images
         run: |
