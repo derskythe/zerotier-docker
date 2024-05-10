@@ -56,7 +56,7 @@ jobs:
         run: podman save -o /tmp/image.tar ${{ env.IMAGE_NAME }}:${{ matrix.platform.tag }}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: image-${{ matrix.platform.tag }}
           path: /tmp/image.tar
