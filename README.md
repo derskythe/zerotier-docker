@@ -12,10 +12,11 @@ This is a container based on a lightweight Alpine Linux image and a copy of Zero
 
 To run this container in the correct way requires some special options to give it special permissions and allow it to persist its files. Here's an example (tested on Fedora CoreOS):
 
+```shell
     docker run --name zerotier-one --device=/dev/net/tun --net=host \
       --cap-add=NET_ADMIN --cap-add=SYS_ADMIN \
       -v /var/lib/zerotier-one:/var/lib/zerotier-one zyclonite/zerotier
-
+```
 
 This runs zyclonite/zerotier in a container with special network admin permissions and with access to the host's network stack (no network isolation) and /dev/net/tun to create tun/tap devices. This will allow it to create zt# interfaces on the host the way a copy of ZeroTier One running on the host would normally be able to.
 
@@ -25,12 +26,15 @@ It also mounts /var/lib/zerotier-one to /var/lib/zerotier-one inside the contain
 
 To join a zerotier network you can use
 
+```shell
     docker exec zerotier-one zerotier-cli join 8056c2e21c000001
-
+```
 
 or create an empty file with the network as name
 
+```shell
     /var/lib/zerotier-one/networks.d/8056c2e21c000001.conf
+```
 
 #### Router mode
 
